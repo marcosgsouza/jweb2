@@ -4,7 +4,7 @@ Implementation-Version: 0.0.1-SNAPSHOT
 Built-By: Vinicius
 Implementation-Vendor-Id: br.com.fabricadeprogramador
 Build-Jdk: 1.8.0_60
-Implementation-URL: http://projects.spring.io/spring-boot/JWEB2/
+Implementation-URL: http://persapiens.org/JWEB2
 Created-By: Maven Integration for Eclipse
-Implementation-Vendor: Pivotal Software, Inc.
+Implementation-Vendor: JoinFaces
 
