@@ -73,7 +73,7 @@ public class TesteClienteRepository {
 		Cliente jao = new Cliente();
 		jao.setNome("Joa da Silva ");
 		jao.setEmail("jao@gmail.com");
-		jao.setCpf("999999999999999999999999999999999999999999");
+		jao.setCpf("9999");
 		
 		repository.save(jao);
 	}

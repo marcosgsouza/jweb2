@@ -9,11 +9,45 @@
 
 <h1> Cadastro de Cliente </h1>
 
-<h:form>
+<h:form id="formCliente">
 		Nome: <h:inputText value="#{clienteController.cliente.nome}" />
 		E-mail:	<h:inputText value="#{clienteController.cliente.email}" />
 		CPF:	<h:inputText value="#{clienteController.cliente.cpf}" />
-		<h:commandButton action="#{clienteController.salvar}" value="Salvar" />
+		<h:commandButton action="#{clienteController.salvar}" value="Salvar" >
+			<f:ajax execute="formCliente" render="formCliente"></f:ajax>
+		</h:commandButton>
+		<h:commandButton action="#{clienteController.cancelar}" value="Cancelar" >
+			<f:ajax execute="@this" render="formCliente"></f:ajax>
+		</h:commandButton>
+		<br></br>
+		<br></br>
+		<br></br>
+		<br></br>
+		<h:dataTable value="#{clienteController.clientes}" var="cli" id="dtCliente">
+			<h:column>
+			<f:facet name="header">NOME</f:facet>
+			#{cli.nome}
+			</h:column>
+			<h:column>
+			<f:facet name="header">EMAIL</f:facet>
+			#{cli.email}
+			</h:column>
+			<h:column>
+			<f:facet name="header">CPF</f:facet>
+			#{cli.cpf}
+			</h:column>
+			
+			<h:column>
+				<f:facet name="header">EXEÇÃO</f:facet>
+				<h:commandButton action="#{clienteController.editar(cli)}" value="Editar">
+					<f:ajax execute="dtCliente" render="formCliente"> </f:ajax>
+				</h:commandButton>
+				<h:commandButton action="#{clienteController.excluir(cli)}" value="Excluir">
+					<f:ajax execute="dtCliente" render="formCliente"> </f:ajax>
+				</h:commandButton>
+			</h:column>
+			
+		</h:dataTable>
 	
 </h:form>
 
